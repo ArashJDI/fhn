@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHN</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #000;
+            /* #202124 */
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            place-content: center;
+        }
+
+        video#logo {
+            width: 80vw;
+        }
+
+        h3 {
+            display: block;
+            position: absolute;
+            bottom: 10px;
+            width: 300px;
+            color: #FFF;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay="" muted="" playsinline="" id="logo">
+        <source src="logo.mp4" type="video/mp4">
+    </video>
+    <h3>Fantastic Hive Network</h3>
+    <script>
+        const video = document.querySelector("#logo")
+        let reverse;
+        video.addEventListener('ended', () => {
+            reverse = setInterval(function () {
+                if (video.currentTime > 0)
+                    video.currentTime = video.currentTime - 0.1;
+                else {
+                    clearInterval(reverse)
+                    video.play()
+                }
+            }, 100);
+        })
+
+    </script>
+</body>
+
+</html>
