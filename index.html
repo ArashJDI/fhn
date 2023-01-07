@@ -24,6 +24,7 @@
 
         video#logo {
             width: 80vw;
+            z-index: 100;
         }
 
         h3 {
@@ -33,11 +34,32 @@
             width: 300px;
             color: #FFF;
             text-align: center;
+            z-index: 101;
+        }
+
+        .box {
+            position: absolute;
+            background-color: rgba(47, 47, 47, 0.67);
+            width: 300px;
+            display: block;
+            border-radius: 30px;
+            padding: 20px;
+            z-index: 101;
+            height: 150px;
+            text-align: right;
+            direction: rtl;
+            top: calc(50vh - 150px/2);
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
         }
     </style>
 </head>
 
 <body>
+    <div class="box">
+        <p>با عرض پوزش از همه کاربران گرامی،<br>بنا به دلایل فنی اپلیکیشن و وبسایت از دسترس خارج شده است.</p><br>
+        <p>از صبر و شکیبایی شما متشکریم</p>
+    </div>
     <video autoplay="" muted="" playsinline="" id="logo">
         <source src="logo.mp4" type="video/mp4">
     </video>
